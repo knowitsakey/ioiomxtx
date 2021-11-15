@@ -113,7 +113,8 @@ cmd_sshmxtx () # create default forward tunnel using ssh
 		case $arg in *['(`\']*) ;; *=*) set -- "$@" \""$arg"\"; esac
 		shift
 	done
-	x_exec ioio.pl / .mxtx -c"$link" / ssh "$remote" env $* .mxtx -s
+	cd '/home/based/ioiomxtx'
+	x_exec ./ioio.pl / ./mxtx -c"$link" / ssh "$remote" env $* /home/based/ioiomxtx/mxtx -s
 }
 
 set_i2u_ldpra ()

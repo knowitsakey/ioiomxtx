@@ -68,7 +68,7 @@ foreach (qw/LANG LANGUAGE LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY
 
 my $link = $ARGV[0]; if (@ARGV > 1) { $ARGV[0] = '--'; } else { shift; }
 
-open P, '-|', qw/mxtx-rsh -t/, $link,
+open P, '-|', ('./mxtx-rsh'), $link,
   # MXTX_EXP_ORIG_TERM is experimental, may vanish/change name in future...
   qw/. env/, "MXTX_EXP_ORIG_TERM=$ENV{TERM}",
   qw/mosh-server new -c/, $term_colors, qw/-i 127.0.0.1/, @lc_opts, @ARGV
